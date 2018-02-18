@@ -26,7 +26,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="237dp"
         android:visibility="visible"
-        app:gif="@drawable/giphy" />
+        app:gif="@drawable/sun" />
 
     <TextView
         android:id="@+id/tvWeatherAdvice"
@@ -37,7 +37,8 @@
         android:text="Weather Advice"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        fontPath="fonts/helvetica.otf"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -68,16 +69,18 @@
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    fontPath="fonts/helvetica.otf"/>
 
                 <TextView
                     android:id="@+id/tvAirPressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="~ hPa"
+                    android:text="~ atm"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    fontPath="fonts/helvetica.otf"/>
             </LinearLayout>
 
             <LinearLayout
@@ -95,7 +98,8 @@
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    fontPath="fonts/helvetica.otf"/>
 
                 <TextView
                     android:id="@+id/tvHumidity"
@@ -104,7 +108,8 @@
                     android:layout_weight="1"
                     android:text="x%"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    fontPath="fonts/helvetica.otf"/>
             </LinearLayout>
 
             <LinearLayout
@@ -121,7 +126,8 @@
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    fontPath="fonts/helvetica.otf"/>
 
                 <TextView
                     android:id="@+id/tvTemp"
@@ -130,7 +136,8 @@
                     android:layout_weight="1"
                     android:text="something degrees"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    fontPath="fonts/helvetica.otf"/>
             </LinearLayout>
 
             <LinearLayout
@@ -147,7 +154,8 @@
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    fontPath="fonts/helvetica.otf"/>
 
                 <TextView
                     android:id="@+id/tvSunPresence"
@@ -156,7 +164,8 @@
                     android:layout_weight="1"
                     android:text="Sun is present"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    fontPath="fonts/helvetica.otf"/>
             </LinearLayout>
 
             <LinearLayout
@@ -165,7 +174,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvIsRaining"
+                    android:id="@+id/tvLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -173,17 +182,31 @@
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    fontPath="fonts/helvetica.otf"/>
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/tvIsRaining"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Raining"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    fontPath="fonts/helvetica.otf"/>
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvWeatherInference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weather"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                fontPath="fonts/helvetica.otf"/>
         </LinearLayout>
     </ScrollView>
 
