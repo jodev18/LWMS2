@@ -4,43 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="dev.jojo.lwms2.WeatherMainActivity"
-    android:padding="16dp"
     tools:showIn="@layout/activity_weather_main">
 
 
     <TextView
-        android:id="@+id/tvValue"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignBaseline="@+id/tvAtmVal2"
+        android:layout_alignBottom="@+id/tvAtmVal2"
+        android:layout_toEndOf="@+id/tvAtmVal2"
+        android:paddingLeft="8dp"
+        android:text="atm"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tvAtmVal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tvAtmVal"
+        android:layout_below="@+id/textView5"
+        android:text="0.8756"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvAtmVal"
+        android:layout_alignBottom="@+id/tvAtmVal"
+        android:layout_toEndOf="@+id/tvAtmVal"
+        android:paddingLeft="8dp"
+        android:text="hPa"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tvListTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="193dp"
         android:text="39"
         android:textColor="@color/colorPrimary"
         android:textSize="48sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        fontPath="fonts/helvetica.otf"/>
 
     <TextView
         android:id="@+id/tvUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvValue"
+        android:layout_alignBottom="@+id/tvListTemp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/tvValue"
+        android:layout_toEndOf="@+id/tvListTemp"
         android:gravity="bottom"
         android:text="°C"
-        android:textSize="24sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        fontPath="fonts/helvetica.otf"/>
 
-    <TextView
-        android:id="@+id/tvWeatherConclusion"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvValue"
-        android:layout_marginTop="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        app:srcCompat="@drawable/cloudyrain" />
+
+    <TextView
+        android:id="@+id/textView2"
+        fontPath="fonts/helvetica.otf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvListTemp"
         android:layout_toStartOf="@+id/tvUnit"
-        android:text="TextView" />
+        android:text="90%"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:paddingLeft="8dp"
+        android:text="humidity"
+        fontPath="fonts/helvetica.otf"
+        android:textColor="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/imgNightDay"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/moon" />
+
+    <TextView
+        android:id="@+id/tvNightDayStat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/imgNightDay"
+        android:layout_below="@+id/imgNightDay"
+        android:text="Night"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        fontPath="fonts/helvetica.otf"/>
+
+    <TextView
+        android:id="@+id/tvAtmVal"
+        fontPath="fonts/helvetica.otf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:text="10000"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnPastRecords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/darker_gray"
+        android:text="Records..."
+        android:textColor="@color/colorPrimary"
+        fontPath="fonts/helvetica.otf"/>
 
 </RelativeLayout>

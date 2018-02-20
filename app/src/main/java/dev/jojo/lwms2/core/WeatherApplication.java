@@ -15,7 +15,7 @@ public class WeatherApplication extends Application {
     public void onCreate() {
         super.onCreate();
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Roboto-RobotoRegular.ttf")
+                .setDefaultFontPath("fonts/helvetica.otf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );

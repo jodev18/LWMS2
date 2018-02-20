@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,30 +57,31 @@ public class WeatherMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_weather_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         h = new Handler(this.getMainLooper());
-
-        ButterKnife.bind(this);
-
-
-        h.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                fetchLatestWeatherData();
-
-                h.postDelayed(this,10000);
-            }
-        },10000);
-
-        h.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        },500);
+//
+//        ButterKnife.bind(this);
+//
+//
+//        h.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                fetchLatestWeatherData();
+//
+//                h.postDelayed(this,10000);
+//            }
+//        },10000);
+//
+//        h.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//            }
+//        },500);
 
 
 
@@ -259,12 +261,12 @@ public class WeatherMainActivity extends AppCompatActivity {
 //                                            Toast.makeText(WeatherMainActivity.this, "Rain", Toast.LENGTH_SHORT).show();
                                         }
 
-                                        try{
-//                                            Toast.makeText(WeatherMainActivity.this, jsonObject.getString("temp"), Toast.LENGTH_SHORT).show();
-                                        }
-                                        catch(JSONException jEx){
-//                                            Toast.makeText(WeatherMainActivity.this, "Error retrieving item", Toast.LENGTH_SHORT).show();
-                                        }
+//                                        try{
+////                                            Toast.makeText(WeatherMainActivity.this, jsonObject.getString("temp"), Toast.LENGTH_SHORT).show();
+//                                        }
+//                                        catch(JSONException jEx){
+////                                            Toast.makeText(WeatherMainActivity.this, "Error retrieving item", Toast.LENGTH_SHORT).show();
+//                                        }
                                     }
                                 });
 

@@ -28,7 +28,8 @@
         android:text="Know your weather"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        fontPath="fonts/helvetica.otf"/>
 
 
 </RelativeLayout>
