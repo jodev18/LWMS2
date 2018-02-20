@@ -30,13 +30,13 @@ public class WeatherMainActivity extends AppCompatActivity {
 
     private Handler h;
 
-    @BindView(R.id.tvAirPressure) TextView airP;
-    @BindView(R.id.tvHumidity) TextView humD;
-    @BindView(R.id.tvTemp) TextView temP;
-    @BindView(R.id.tvSunPresence) TextView sunP;
-    @BindView(R.id.tvIsRaining) TextView isRain;
-
-    @BindView(R.id.tvWeatherInference) TextView wInfer;
+//    @BindView(R.id.tvAirPressure) TextView airP;
+//    @BindView(R.id.tvHumidity) TextView humD;
+//    @BindView(R.id.tvTemp) TextView temP;
+//    @BindView(R.id.tvSunPresence) TextView sunP;
+//    @BindView(R.id.tvIsRaining) TextView isRain;
+//
+//    @BindView(R.id.tvWeatherInference) TextView wInfer;
 
     static Integer counter = 1;
     Integer totalTemp = 0;
@@ -202,10 +202,10 @@ public class WeatherMainActivity extends AppCompatActivity {
                                         });
 
                                         if(humUp && pressDown){
-                                            wInfer.setText("High chances of rain");
+//                                            wInfer.setText("High chances of rain");
                                         }
                                         else if(pressUp && humDown && tempUp){
-                                            wInfer.setText("High pressure. Less chances of rain.");
+//                                            wInfer.setText("High pressure. Less chances of rain.");
                                         }
                                     }
                                 }
@@ -222,10 +222,10 @@ public class WeatherMainActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
 
-                                        airP.setText(atm + " atm");
-                                        humD.setText(humd + "%");
-                                        temP.setText(temp + " C");
-                                        sunP.setText(lightstat.equals("0") ? "DARK" : "LIGHT");
+//                                        airP.setText(atm + " atm");
+//                                        humD.setText(humd + "%");
+//                                        temP.setText(temp + " C");
+//                                        sunP.setText(lightstat.equals("0") ? "DARK" : "LIGHT");
 //                                        isRain.setText(rainstat);
 
 
@@ -233,30 +233,30 @@ public class WeatherMainActivity extends AppCompatActivity {
 
 //                                            Toast.makeText(WeatherMainActivity.this, "Dry", Toast.LENGTH_SHORT).show();
 
-                                            isRain.setText("Dry");
+//                                            isRain.setText("Dry");
 
                                         }
-                                        else if(rainstat.equals("2")){
-                                            Toast.makeText(WeatherMainActivity.this, "Light rain", Toast.LENGTH_SHORT).show();
-
-                                            isRain.setText("Light Rain");
+                                        else if(rainstat.equals("w_clouddd")){
+//                                            Toast.makeText(WeatherMainActivity.this, "Light rain", Toast.LENGTH_SHORT).show();
+//
+//                                            isRain.setText("Light Rain");
                                         }
                                         else if(rainstat.equals("1")){
-                                            Toast.makeText(WeatherMainActivity.this, "Rain", Toast.LENGTH_SHORT).show();
-
-                                            isRain.setText("Heavy Rain");
+//                                            Toast.makeText(WeatherMainActivity.this, "Rain", Toast.LENGTH_SHORT).show();
+//
+//                                            isRain.setText("Heavy Rain");
                                         }
                                         else{
-
-                                            isRain.setText("Heavy Rain");
-                                            Toast.makeText(WeatherMainActivity.this, "Rain", Toast.LENGTH_SHORT).show();
+//
+//                                            isRain.setText("Heavy Rain");
+//                                            Toast.makeText(WeatherMainActivity.this, "Rain", Toast.LENGTH_SHORT).show();
                                         }
 
                                         try{
-                                            Toast.makeText(WeatherMainActivity.this, jsonObject.getString("temp"), Toast.LENGTH_SHORT).show();
+//                                            Toast.makeText(WeatherMainActivity.this, jsonObject.getString("temp"), Toast.LENGTH_SHORT).show();
                                         }
                                         catch(JSONException jEx){
-                                            Toast.makeText(WeatherMainActivity.this, "Error retrieving item", Toast.LENGTH_SHORT).show();
+//                                            Toast.makeText(WeatherMainActivity.this, "Error retrieving item", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });

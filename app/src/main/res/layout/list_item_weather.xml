@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="dev.jojo.lwms2.WeatherMainActivity"
-    android:padding="16dp"
-    tools:showIn="@layout/activity_weather_main">
-
+    android:padding="18dp">
 
     <TextView
         android:id="@+id/tvValue"
@@ -16,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="193dp"
         android:text="39"
         android:textColor="@color/colorPrimary"
         android:textSize="48sp"
@@ -33,14 +26,4 @@
         android:gravity="bottom"
         android:text="°C"
         android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvValue"
-        android:layout_marginTop="43dp"
-        android:layout_toStartOf="@+id/tvUnit"
-        android:text="TextView" />
-
 </RelativeLayout>
