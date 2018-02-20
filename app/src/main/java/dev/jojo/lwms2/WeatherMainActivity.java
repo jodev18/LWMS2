@@ -74,6 +74,13 @@ public class WeatherMainActivity extends AppCompatActivity {
             }
         },10000);
 
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        },500);
+
 
 
     }
