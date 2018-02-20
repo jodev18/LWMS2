@@ -65,16 +65,6 @@ public class WeatherMainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        GifView gifView1 = (GifView)findViewById(R.id.gif1);
-        gifView1.setVisibility(View.VISIBLE);
-        gifView1.play();
-        gifView1.pause();
-        gifView1.setGifResource(R.drawable.giphy);
-        gifView1.getGifResource();
-        gifView1.play();
-        gifView1.play();
-
-
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
