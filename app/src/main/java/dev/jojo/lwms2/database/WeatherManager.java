@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dev.jojo.lwms2.objects.WeatherObject;
@@ -68,13 +69,60 @@ public class WeatherManager extends WeatherDB{
         return insTat;
     }
 
-//    public List<WeatherObject> getAllWeatherData(){
-//
-//        String q = "SELECT * FROM " + WeatherTable.TABLE_NAME
-//                + " ORDER BY " + WeatherTable.TIMESTAMP + " DESC";
-//
-//
-//    }
+    /**
+     * fetches all data
+     * @return
+     */
+    public List<WeatherObject> getAllWeatherData(){
+
+        String q = "SELECT * FROM " + WeatherTable.TABLE_NAME
+                + " ORDER BY " + WeatherTable.TIMESTAMP + " DESC LIMIT 20";
+
+        this.c = this.sq.rawQuery(q,null);
+
+        if(c.getCount() > 0){
+
+            List<WeatherObject> wObj = new ArrayList<WeatherObject>();
+
+            while(c.moveToNext()){
+
+                WeatherObject cObj = new WeatherObject();
+
+                cObj.ATM_PRESSURE = c.getString(c.getColumnIndex(WeatherTable.ATMOSPHERIC));
+                cObj.HPA_PRESSURE = c.getString(c.getColumnIndex(WeatherTable.HPA_PRESSURE));
+                cObj.HUMIDITY = c.getString(c.getColumnIndex(WeatherTable.HUMIDITY));
+                cObj.IS_LIGHT_STAT = c.getString(c.getColumnIndex(WeatherTable.HAS_LIGHT));
+                cObj.TEMPERATURE = c.getString(c.getColumnIndex(WeatherTable.TEMPERATURE));
+                cObj.IS_RAIN_STAT = c.getString(c.getColumnIndex(WeatherTable.IS_RAINING));
+                cObj.TIMESTAMP = c.getString(c.getColumnIndex(WeatherTable.TIMESTAMP));
+
+                wObj.add(cObj);
+            }
+
+            return wObj;
+
+        }
+
+        else{
+            return null;
+        }
+
+    }
+
+    /**
+     * Checks if an entry is present in the database.
+     * @param timestamp
+     * @return
+     */
+    public Boolean isPresent(String timestamp){
+
+        String query = "SELECT * FROM " + WeatherTable.TABLE_NAME + " WHERE "
+                + WeatherTable.TIMESTAMP + "='" + timestamp + "'";
+
+        this.c = this.sq.rawQuery(query,null);
+
+        return this.c.getCount() > 0;
+    }
 
 
 }

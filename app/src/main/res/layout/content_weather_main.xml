@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tvAtmVal2"
         android:layout_alignBottom="@+id/tvAtmVal2"
-        android:layout_toEndOf="@+id/tvAtmVal2"
+        android:layout_toEndOf="@+id/tvAtmVal"
         android:paddingLeft="8dp"
         android:text="atm"
         android:textColor="@color/colorPrimary" />
@@ -28,7 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tvAtmVal"
         android:layout_below="@+id/textView5"
+        android:layout_toStartOf="@+id/textView6"
         android:text="0.8756"
+        android:textAlignment="textEnd"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -49,26 +51,27 @@
         fontPath="fonts/helvetica.otf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/imgRainStat"
-        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/tvUnit"
         android:text="39"
+        android:textAlignment="textEnd"
         android:textColor="@color/colorPrimary"
         android:textSize="48sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvUnit"
+        fontPath="fonts/helvetica.otf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvListTempView"
         android:layout_alignBottom="@+id/tvListTempView"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/tvListTempView"
+        android:layout_alignEnd="@+id/btnPastRecords"
         android:gravity="bottom"
         android:text="°C"
         android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        fontPath="fonts/helvetica.otf"/>
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/imgRainStat"
@@ -84,9 +87,11 @@
         fontPath="fonts/helvetica.otf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvListTempView"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tvListTempView"
-        android:layout_toStartOf="@+id/tvUnit"
         android:text="90%"
+        android:textAlignment="textEnd"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -129,8 +134,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/tvHumidityView"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tvHumidityView"
         android:text="10000"
+        android:textAlignment="textEnd"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -144,6 +151,7 @@
         android:background="@android:color/darker_gray"
         android:text="Records..."
         android:textColor="@color/colorPrimary"
+        android:padding="18dp"
         fontPath="fonts/helvetica.otf"/>
 
 </RelativeLayout>

@@ -56,6 +56,7 @@ public class WeatherAdapter extends BaseAdapter {
         TextView tvHum = (TextView)convertView.findViewById(R.id.tvListHum);
         TextView tvHPA = (TextView)convertView.findViewById(R.id.tvListHPA);
         TextView tvATM = (TextView)convertView.findViewById(R.id.tvListATM);
+        TextView tvTime = (TextView)convertView.findViewById(R.id.tvListTimestamp);
 
         ImageView imRaining = (ImageView)convertView.findViewById(R.id.imgRainStat);
         ImageView imLight = (ImageView)convertView.findViewById(R.id.imgLightStat);
@@ -64,6 +65,7 @@ public class WeatherAdapter extends BaseAdapter {
         tvHum.setText(cWObj.HUMIDITY);
         tvHPA.setText(cWObj.HPA_PRESSURE);
         tvATM.setText(cWObj.ATM_PRESSURE);
+        tvTime.setText(cWObj.TIMESTAMP.substring(0,18));
 
         imRaining.setImageDrawable((Integer.parseInt(cWObj.IS_RAIN_STAT) < 3) ? this.act.getDrawable(R.drawable.cloudyrain) :
                 this.act.getDrawable(R.drawable.sun_outline));
