@@ -333,13 +333,13 @@ public class WeatherMainActivity extends AppCompatActivity {
                     }
 
                 } catch (final Exception ex) {
-                    h.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(WeatherMainActivity.this, "Exception: " + ex.getMessage() , Toast.LENGTH_SHORT).show();
-                            Toast.makeText(WeatherMainActivity.this, "Response null!", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+//                    h.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(WeatherMainActivity.this, "Exception: " + ex.getMessage() , Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(WeatherMainActivity.this, "Response null!", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
                 }
 
                 h.postDelayed(this,5000);
