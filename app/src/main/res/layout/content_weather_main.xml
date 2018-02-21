@@ -45,25 +45,25 @@
         android:textColor="@color/colorPrimary" />
 
     <TextView
-        android:id="@+id/tvListTemp"
+        android:id="@+id/tvListTempView"
+        fontPath="fonts/helvetica.otf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imgRainStat"
         android:layout_centerHorizontal="true"
         android:text="39"
         android:textColor="@color/colorPrimary"
         android:textSize="48sp"
-        android:textStyle="bold"
-        fontPath="fonts/helvetica.otf"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvListTemp"
+        android:layout_alignBottom="@+id/tvListTempView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/tvListTemp"
+        android:layout_toEndOf="@+id/tvListTempView"
         android:gravity="bottom"
         android:text="°C"
         android:textColor="@color/colorPrimary"
@@ -71,7 +71,7 @@
         fontPath="fonts/helvetica.otf"/>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgRainStat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -80,11 +80,11 @@
         app:srcCompat="@drawable/cloudyrain" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvHumidityView"
         fontPath="fonts/helvetica.otf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvListTemp"
+        android:layout_below="@+id/tvListTempView"
         android:layout_toStartOf="@+id/tvUnit"
         android:text="90%"
         android:textColor="@color/colorPrimary"
@@ -95,9 +95,9 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
+        android:layout_alignBaseline="@+id/tvHumidityView"
+        android:layout_alignBottom="@+id/tvHumidityView"
+        android:layout_toEndOf="@+id/tvHumidityView"
         android:paddingLeft="8dp"
         android:text="humidity"
         fontPath="fonts/helvetica.otf"
@@ -128,8 +128,8 @@
         fontPath="fonts/helvetica.otf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/tvHumidityView"
+        android:layout_below="@+id/tvHumidityView"
         android:text="10000"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"

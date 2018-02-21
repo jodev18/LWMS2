@@ -1,16 +1,16 @@
 package dev.jojo.lwms2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.cunoraz.gifview.library.GifView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,14 +31,6 @@ public class WeatherMainActivity extends AppCompatActivity {
 
     private Handler h;
 
-//    @BindView(R.id.tvAirPressure) TextView airP;
-//    @BindView(R.id.tvHumidity) TextView humD;
-//    @BindView(R.id.tvTemp) TextView temP;
-//    @BindView(R.id.tvSunPresence) TextView sunP;
-//    @BindView(R.id.tvIsRaining) TextView isRain;
-//
-//    @BindView(R.id.tvWeatherInference) TextView wInfer;
-
     static Integer counter = 1;
     Integer totalTemp = 0;
     Integer aveTemp = 0;
@@ -54,6 +46,17 @@ public class WeatherMainActivity extends AppCompatActivity {
     boolean pressUp = false;
     boolean pressDown = false;
 
+
+
+    @BindView(R.id.btnPastRecords) Button bPastRec;
+    @BindView(R.id.tvListTempView) TextView tvTemp;
+    @BindView(R.id.tvHumidityView) TextView tvHumidity;
+    @BindView(R.id.tvAtmVal) TextView tvHPA;
+    @BindView(R.id.tvAtmVal2) TextView tvAtm;
+
+    @BindView(R.id.imgRainStat) ImageView imRainStat;
+    @BindView(R.id.imgNightDay) ImageView imLightStat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +67,7 @@ public class WeatherMainActivity extends AppCompatActivity {
 
         h = new Handler(this.getMainLooper());
 //
-//        ButterKnife.bind(this);
+        ButterKnife.bind(this);
 //
 //
 //        h.postDelayed(new Runnable() {
@@ -83,8 +86,20 @@ public class WeatherMainActivity extends AppCompatActivity {
 //            }
 //        },500);
 
+        fetchLatestWeatherData();
+        setButtonRecords();
 
+    }
 
+    private void setButtonRecords(){
+
+        bPastRec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pRec = new Intent(getApplicationContext(),TemperatureRecords.class);
+                startActivity(pRec);
+            }
+        });
     }
 
     private void fetchLatestWeatherData(){
@@ -117,7 +132,7 @@ public class WeatherMainActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     //airP.setText(vars);
-//                                    Toast.makeText(WeatherMainActivity.this, vars, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(WeatherMainActivity.this, vars, Toast.LENGTH_SHORT).show();
                                 }
                             });
 
@@ -140,6 +155,8 @@ public class WeatherMainActivity extends AppCompatActivity {
                                 final Integer cTemp = Integer.parseInt(temp);
                                 final Integer cHum = Integer.parseInt(humd);
                                 final Double aPress = Double.parseDouble(hpa);
+
+
 
                                 if(aveTemp != null && aveAirP != null){
                                     if(aveTemp > 0 && aveAirP > 0){
@@ -237,6 +254,15 @@ public class WeatherMainActivity extends AppCompatActivity {
 //                                        sunP.setText(lightstat.equals("0") ? "DARK" : "LIGHT");
 //                                        isRain.setText(rainstat);
 
+                                        //Set texts
+                                        tvTemp.setText(temp);
+                                        tvHumidity.setText(humd);
+                                        tvHPA.setText(hpa);
+                                        tvAtm.setText(atm);
+
+                                        imLightStat.setImageDrawable((lightstat.equals("0") ? getDrawable(R.drawable.moon) :
+                                                getDrawable(R.drawable.sun_outline)));
+
 
                                         if(rainstat.equals("3")){
 
@@ -244,19 +270,23 @@ public class WeatherMainActivity extends AppCompatActivity {
 
 //                                            isRain.setText("Dry");
 
+                                            imRainStat.setImageDrawable(getDrawable(R.drawable.sun_outline));
+
                                         }
-                                        else if(rainstat.equals("w_clouddd")){
+                                        else if(rainstat.equals("2")){
 //                                            Toast.makeText(WeatherMainActivity.this, "Light rain", Toast.LENGTH_SHORT).show();
 //
 //                                            isRain.setText("Light Rain");
+                                            imRainStat.setImageDrawable(getDrawable(R.drawable.cloudyrain));
                                         }
                                         else if(rainstat.equals("1")){
 //                                            Toast.makeText(WeatherMainActivity.this, "Rain", Toast.LENGTH_SHORT).show();
 //
 //                                            isRain.setText("Heavy Rain");
+                                            imRainStat.setImageDrawable(getDrawable(R.drawable.cloudyrain));
                                         }
                                         else{
-//
+                                            imRainStat.setImageDrawable(getDrawable(R.drawable.cloudyrain));
 //                                            isRain.setText("Heavy Rain");
 //                                            Toast.makeText(WeatherMainActivity.this, "Rain", Toast.LENGTH_SHORT).show();
                                         }
@@ -311,6 +341,8 @@ public class WeatherMainActivity extends AppCompatActivity {
                         }
                     });
                 }
+
+                h.postDelayed(this,5000);
             }
         }).start();
     }

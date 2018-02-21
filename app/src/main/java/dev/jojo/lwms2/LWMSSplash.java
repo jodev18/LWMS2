@@ -1,5 +1,6 @@
 package dev.jojo.lwms2;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,12 @@ public class LWMSSplash extends AppCompatActivity {
 
         h = new Handler(this.getMainLooper());
 
+        AlertDialog.Builder lat = new AlertDialog.Builder(LWMSSplash.this);
+        lat.setTitle("Latest");
+        lat.setMessage("This is the latest weather debug 8");
+
+        lat.create().show();
+
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -32,7 +39,7 @@ public class LWMSSplash extends AppCompatActivity {
                 finish();
 
             }
-        },2000);
+        },5000);
 
     }
 }

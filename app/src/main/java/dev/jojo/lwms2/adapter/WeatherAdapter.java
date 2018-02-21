@@ -7,8 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 import dev.jojo.lwms2.R;
@@ -54,7 +52,7 @@ public class WeatherAdapter extends BaseAdapter {
         }
 
         //Load views
-        TextView tvTemp = (TextView)convertView.findViewById(R.id.tvListTemp);
+        TextView tvTemp = (TextView)convertView.findViewById(R.id.tvListTempView);
         TextView tvHum = (TextView)convertView.findViewById(R.id.tvListHum);
         TextView tvHPA = (TextView)convertView.findViewById(R.id.tvListHPA);
         TextView tvATM = (TextView)convertView.findViewById(R.id.tvListATM);
@@ -67,7 +65,10 @@ public class WeatherAdapter extends BaseAdapter {
         tvHPA.setText(cWObj.HPA_PRESSURE);
         tvATM.setText(cWObj.ATM_PRESSURE);
 
-
+        imRaining.setImageDrawable((Integer.parseInt(cWObj.IS_RAIN_STAT) < 3) ? this.act.getDrawable(R.drawable.cloudyrain) :
+                this.act.getDrawable(R.drawable.sun_outline));
+        imLight.setImageDrawable((Integer.parseInt(cWObj.IS_LIGHT_STAT) == 0) ? this.act.getDrawable(R.drawable.moon) :
+                this.act.getDrawable(R.drawable.sun_outline));
 
         return convertView;
 
