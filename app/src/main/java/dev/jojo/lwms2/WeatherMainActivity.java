@@ -390,7 +390,7 @@ public class WeatherMainActivity extends AppCompatActivity {
 
                 weatherCheck.start();
 
-                h.postDelayed(this,300000);
+                h.postDelayed(this,8000);
             }
         },10000);
     }

@@ -76,7 +76,7 @@ public class WeatherManager extends WeatherDB{
     public List<WeatherObject> getAllWeatherData(){
 
         String q = "SELECT * FROM " + WeatherTable.TABLE_NAME
-                + " ORDER BY " + WeatherTable.TIMESTAMP + " DESC LIMIT 20";
+                + " ORDER BY " + WeatherTable.TIMESTAMP + " DESC LIMIT 100";
 
         this.c = this.sq.rawQuery(q,null);
 
