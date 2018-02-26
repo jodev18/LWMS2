@@ -35,5 +35,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     compile 'uk.co.chrisjenx:calligraphy:2.3.0'
+    compile 'com.evrencoskun.library:tableview:0.8.6'
 
 }

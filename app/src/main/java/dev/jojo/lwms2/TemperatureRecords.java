@@ -15,8 +15,8 @@ import dev.jojo.lwms2.objects.WeatherObject;
 
 public class TemperatureRecords extends AppCompatActivity {
 
-    @BindView(R.id.lvTempRecords) ListView temperatureRecords;
-    @BindView(R.id.tvEmptyTemp) TextView emptyList;
+//    @BindView(R.id.lvTempRecords) ListView temperatureRecords;
+//    @BindView(R.id.tvEmptyTemp) TextView emptyList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,29 +27,36 @@ public class TemperatureRecords extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        setListViewAdapter();
+//        setListViewAdapter();
+
+        setupTableView();
 
     }
 
-    private void setListViewAdapter(){
+//    private void setListViewAdapter(){
+//
+//        WeatherManager wm = new WeatherManager(TemperatureRecords.this);
+//
+//        List<WeatherObject> objects = wm.getAllWeatherData();
+//
+//        if(objects != null){
+//
+//            WeatherAdapter weatherAdapter
+//                    = new WeatherAdapter(TemperatureRecords.this,objects);
+//
+//            temperatureRecords.setAdapter(weatherAdapter);
+//
+//            emptyList.setVisibility(TextView.GONE);
+//
+//        }
+//        else{
+//            emptyList.setVisibility(TextView.VISIBLE);
+//        }
+//
+//    }
 
-        WeatherManager wm = new WeatherManager(TemperatureRecords.this);
 
-        List<WeatherObject> objects = wm.getAllWeatherData();
-
-        if(objects != null){
-
-            WeatherAdapter weatherAdapter
-                    = new WeatherAdapter(TemperatureRecords.this,objects);
-
-            temperatureRecords.setAdapter(weatherAdapter);
-
-            emptyList.setVisibility(TextView.GONE);
-
-        }
-        else{
-            emptyList.setVisibility(TextView.VISIBLE);
-        }
+    private void setupTableView(){
 
     }
 }

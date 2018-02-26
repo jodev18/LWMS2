@@ -8,23 +8,28 @@
     tools:context="dev.jojo.lwms2.TemperatureRecords">
 
 
-    <ListView
-        android:id="@+id/lvTempRecords"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+    <!--<ListView-->
+        <!--android:id="@+id/lvTempRecords"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true" />-->
 
-    <TextView
-        android:id="@+id/tvEmptyTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="No records yet."
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        fontPath="fonts/helvetica.otf"/>
+    <!--<TextView-->
+        <!--android:id="@+id/tvEmptyTemp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:text="No records yet."-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:textSize="18sp"-->
+        <!--android:textStyle="bold"-->
+        <!--fontPath="fonts/helvetica.otf"/>-->
+
+    <com.evrencoskun.tableview.TableView
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
