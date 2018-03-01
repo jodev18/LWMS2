@@ -77,6 +77,8 @@ public class WeatherTableAdapter extends AbstractTableAdapter {
     @Override
     public void onBindCellViewHolder(AbstractViewHolder holder, Object cellItemModel, int columnPosition, int rowPosition) {
 
+        //initialize data here
+
     }
 
     @Override
